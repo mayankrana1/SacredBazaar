@@ -1,0 +1,9 @@
+DefaultTableModel dtModel = (DefaultTableModel) table.getModel();
+        for(int i=0;i<rowCount;i++){
+            String[] stringArray = {client.readText(),client.readText(),client.readText(),client.readText()};
+            JLabel label = new JLabel();
+            label.setIcon(client.readImage());
+            dtModel.addRow(new Object[]{stringArray[0],stringArray[1],stringArray[2],stringArray[3],label});
+        }
+        table.getColumn("Photo").setCellRenderer(new ImageRenderer());
+        System.out.println("Helo");
